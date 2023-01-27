@@ -1,3 +1,4 @@
+import { ExperiencesInterface, SkillsInterface } from './api';
 export interface TitleHeaderProps {
   title: string;
   classes?: string;
@@ -5,8 +6,10 @@ export interface TitleHeaderProps {
 }
 
 export interface SkillProps {
-  directionLeft?: boolean;
-  skill: ISkillsProps;
+  skill: SkillsInterface;
+}
+export interface ExperiencesInterfaceProps {
+  experience: ExperiencesInterface;
 }
 
 export interface ContactInputs {

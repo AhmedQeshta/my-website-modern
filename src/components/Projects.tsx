@@ -43,7 +43,7 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                   {technologies?.map(({ id, image }) => (
                     <div
                       key={id}
-                      className="flex flex-col items-center space-y-2 bg-[#F7AB0A]/20 p-2 rounded-full">
+                      className="flex flex-col items-center space-y-2 bg-[#999999]/50 p-3 rounded-full w-[50px] h-[50px]">
                       <Image src={image?.url} width={35} height={35} alt="user" priority={false} />
                     </div>
                   ))}

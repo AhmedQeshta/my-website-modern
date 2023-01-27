@@ -1,4 +1,9 @@
-export type { TitleHeaderProps, SkillProps, ContactInputs } from './components';
+export type {
+  TitleHeaderProps,
+  SkillProps,
+  ExperiencesInterfaceProps,
+  ContactInputs,
+} from './components';
 export type {
   PageinfosInterface,
   ApiPageInfosInterFace,

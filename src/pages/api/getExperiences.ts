@@ -28,6 +28,7 @@ export default async function handler(
         dateEnded
         dateStarted
         summaryPoints
+        order
       }
     }
     `,

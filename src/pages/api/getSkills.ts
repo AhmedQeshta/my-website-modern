@@ -16,6 +16,7 @@ export default async function handler(
         image{
           url
         }
+        directionLeft
       }
     }`,
   );

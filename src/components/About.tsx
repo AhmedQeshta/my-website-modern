@@ -5,7 +5,7 @@ import { withGuard } from '@/utils';
 import { ApiPageInfosInterFace } from '@/interfaces';
 
 const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
-  const { backgroundInfo, description } = pageinfos[0] ?? {};
+  const { backgroundInfo, description, resume } = pageinfos[0] ?? {};
 
   return (
     <motion.div
@@ -41,6 +41,13 @@ const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
             __html: description?.html,
           }}
         />
+        <a
+          href={resume?.url}
+          target="_blank"
+          rel="noreferrer"
+          className="text-2xl font-semibold text-[#F7AB0A] cursor-pointer mt-5 border border-[#F7AB0A]/50 p-3 flex justify-center items-center rounded-full hover:bg-[#F7AB0A]/50 hover:text-white transform ease-in-out duration-300">
+          Download Resume
+        </a>
       </div>
     </motion.div>
   );

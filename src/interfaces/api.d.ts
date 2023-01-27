@@ -1,4 +1,4 @@
-type ImageType = {
+type AssetType = {
   url: string;
 };
 
@@ -8,7 +8,7 @@ type DescriptionType = {
 
 type TechnologiesType = {
   id: string;
-  image: ImageType;
+  image: AssetType;
   title: string;
 };
 
@@ -22,9 +22,10 @@ export interface PageinfosInterface {
   tittle: string;
   role: string;
   email: string;
-  heroImage: ImageType;
-  backgroundInfo: ImageType;
+  heroImage: AssetType;
+  backgroundInfo: AssetType;
   description: DescriptionType;
+  resume: AssetType;
 }
 
 export interface ApiPageInfosInterFace {
@@ -35,7 +36,8 @@ export interface SkillsInterface {
   id: string;
   title: string;
   progress: number;
-  image: ImageType;
+  image: AssetType;
+  directionLeft: boolean;
 }
 
 export interface ApiSkillsInterFace {
@@ -53,13 +55,14 @@ export interface ApiSocialsInterface {
 export interface ExperiencesInterface {
   id: string;
   company: string;
-  companyImage: ImageType;
+  companyImage: AssetType;
   isCurrentlyWorkingHere: boolean;
   jobTitle: string;
   technologies: TechnologiesType[];
   dateEnded: string; // Date
   dateStarted: string; // Date
   summaryPoints: string[];
+  order: number;
 }
 
 export interface ApiExperiencesInterface {
@@ -69,7 +72,7 @@ export interface ApiExperiencesInterface {
 export interface ProjectsInterface {
   id: string;
   title: string;
-  image: ImageType;
+  image: AssetType;
   summary: DescriptionType;
   technologies: TechnologiesType[];
   linkToBuild: string;

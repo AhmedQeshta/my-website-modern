@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { ExperiencesInterfaceProps } from '@/interfaces';
 
-const ExperienceCard: FC<any> = ({ experience }) => {
+const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
   const {
     company,
     companyImage,

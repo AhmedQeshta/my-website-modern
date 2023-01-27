@@ -26,6 +26,9 @@ export default async function handler(
         description{
           html
         }
+        resume{
+          url
+        }
       }
     }
     
