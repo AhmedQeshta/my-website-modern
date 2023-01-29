@@ -4,20 +4,12 @@ import Image from 'next/image';
 import { ExperiencesInterfaceProps } from '@/interfaces';
 
 const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
-  const {
-    company,
-    companyImage,
-    dateEnded,
-    dateStarted,
-    isCurrentlyWorkingHere,
-    jobTitle,
-    technologies,
-    summaryPoints,
-  } = experience;
+  const { company, companyImage, dateEnded, dateStarted, jobTitle, technologies, summaryPoints } =
+    experience;
 
   return (
     <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[700px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-60 transition-opacity duration-200 overflow-hidden">
-      <motion.img
+      <motion.div
         initial={{
           opacity: 0,
           y: -100,
@@ -26,18 +18,30 @@ const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
           duration: 1.2,
         }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        src={companyImage?.url}
-        alt={company}
-        width={100}
-        height={100}
-        className="rounded-full h-32 w-32 xl:w-[200px] xl:h-[200px] object-cover object-center"
-      />
+        viewport={{ once: true }}>
+        <Image
+          src={companyImage?.url}
+          width={300}
+          height={300}
+          className="rounded-full h-32 w-32 xl:w-[200px] xl:h-[200px] object-cover object-center"
+          alt={company}
+          priority
+        />
+      </motion.div>
 
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">{jobTitle}</h4>
         <p className="font-bold text-2xl mt-1">{company}</p>
-        <div className="flex space-x-2 my-2">
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          transition={{
+            duration: 1.2,
+          }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="flex space-x-2 my-2">
           {technologies?.map(({ image, title }: any) => (
             <Image
               key={title}
@@ -48,7 +52,7 @@ const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
               alt={title}
             />
           ))}
-        </div>
+        </motion.div>
         <p className="uppercase py-5 text-gray-300">
           {dateStarted} - {dateEnded ?? 'present'}
         </p>
