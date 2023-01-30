@@ -9,7 +9,7 @@ export default async function handler(
 ) {
   const data = await graphQLClient.request(
     `query Skills {
-      skills {
+      skills(last: 20) {
         id
         title
         progress
