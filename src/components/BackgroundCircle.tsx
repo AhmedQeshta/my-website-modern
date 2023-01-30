@@ -15,7 +15,7 @@ const BackgroundCircle: FC = () => {
       transition={{
         duration: 2.5,
       }}
-      className="relative flex justify-center items-center">
+      className="absolute -mt-64 flex justify-center items-center">
       <div className="absolute border border-[#333333] rounded-full h-[200px] w-[200px] mt-52 animate-ping" />
       <div className="rounded-full border border-[#333333] h-[350px] w-[350px] mt-52 absolute" />
       <div className="rounded-full border border-[#333333] h-[350px] w-[350px] mt-52 absolute" />

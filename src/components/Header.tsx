@@ -22,7 +22,7 @@ const Header: FC<ApiSocialsInterface> = ({ socials }) => {
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-row items-center">
+        className="flex flex-row items-center text-sm">
         {socials?.map(({ url, id }: any) => (
           <SocialIcon
             key={id}
@@ -30,6 +30,7 @@ const Header: FC<ApiSocialsInterface> = ({ socials }) => {
             fgColor="gray"
             bgColor="transparent"
             className="cursor-pointer"
+            style={{ height: 35, width: 35 }}
           />
         ))}
       </motion.div>
