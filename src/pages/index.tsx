@@ -1,10 +1,18 @@
 import Head from 'next/head';
-import { About, ContactMe, Header, Hero, Projects, Skills, WorkExperience } from '@/components';
 import Link from 'next/link';
 import { ArrowSmallUpIcon } from '@heroicons/react/24/solid';
 import { GetStaticProps } from 'next';
 import { fetchData } from '@/utils';
 import { HomePropsInterface } from '@/interfaces';
+import dynamic from 'next/dynamic';
+
+const Header = dynamic(() => import('@/components/Header'));
+const Hero = dynamic(() => import('@/components/Hero'));
+const About = dynamic(() => import('@/components/About'));
+const WorkExperience = dynamic(() => import('@/components/WorkExperience'));
+const Skills = dynamic(() => import('@/components/Skills'));
+const Projects = dynamic(() => import('@/components/Projects'));
+const ContactMe = dynamic(() => import('@/components/ContactMe'));
 
 export default function Home({
   pageinfos,
