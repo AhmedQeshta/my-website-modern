@@ -30,14 +30,16 @@ const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]">
-        <Image
-          src={backgroundInfo?.url}
-          width={450}
-          height={450}
-          className="relative  w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
-          alt={tittle}
-          priority
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src={backgroundInfo?.url}
+            fill
+            sizes="(max-width: 640px) 100vw, 640px"
+            className="relative  w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+            alt={tittle}
+            priority
+          />
+        </div>
       </motion.div>
 
       <motion.div

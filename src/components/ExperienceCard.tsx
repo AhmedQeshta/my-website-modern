@@ -21,8 +21,8 @@ const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
         viewport={{ once: true }}>
         <Image
           src={companyImage?.url}
-          width={300}
-          height={300}
+          width={200}
+          height={200}
           className="rounded-full h-32 w-32 xl:w-[200px] xl:h-[200px] object-cover object-center"
           alt={company}
           priority
