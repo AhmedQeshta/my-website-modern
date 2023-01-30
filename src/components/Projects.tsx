@@ -23,17 +23,17 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
               }}
               whileInView={{ opacity: 1, y: 0 }}
               key={id}
-              className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:44 h-screen">
+              className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 h-screen">
               <Image
                 src={image?.url}
                 width={380}
                 height={380}
                 alt="user"
                 priority
-                className="w-auto h-auto mt-10"
+                className="w-64 h-64 mt-10 md:w-auto md:h-auto"
               />
               <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-                <h4 className="text-4xl font-semibold text-center">
+                <h4 className="text-xl md:text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50 px-2">
                     Case Study {index} of {projects?.length}:
                   </span>
@@ -43,13 +43,13 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                   {technologies?.map(({ id, image }) => (
                     <div
                       key={id}
-                      className="flex flex-col items-center space-y-2 bg-[#999999]/50 p-3 rounded-full w-[50px] h-[50px]">
+                      className="flex flex-col items-center space-y-2 bg-[#999999]/50 p-3 rounded-full w-[30px] h-[30px] md:w-[50px] md:h-[50px]">
                       <Image src={image?.url} width={35} height={35} alt="user" priority={false} />
                     </div>
                   ))}
                 </div>
                 <div
-                  className="text-xl text-justify text-gray-200"
+                  className="text-lg md:text-xl text-justify text-gray-200"
                   dangerouslySetInnerHTML={{
                     __html: summary?.html,
                   }}

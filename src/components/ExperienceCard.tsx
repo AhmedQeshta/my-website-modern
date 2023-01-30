@@ -8,7 +8,7 @@ const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
     experience;
 
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[700px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-60 transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[400px] md:w-[500px] xl:w-[600px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-60 transition-opacity duration-200 overflow-hidden">
       <motion.div
         initial={{
           opacity: 0,
@@ -18,12 +18,13 @@ const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
           duration: 1.2,
         }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}>
+        viewport={{ once: true }}
+        className="rounded-full h-32 w-32 object-cover object-center">
         <Image
           src={companyImage?.url}
-          width={200}
-          height={200}
-          className="rounded-full h-32 w-32 xl:w-[200px] xl:h-[200px] object-cover object-center"
+          width={150}
+          height={150}
+          className="rounded-full h-32 w-32 object-cover object-center"
           alt={company}
           priority
         />

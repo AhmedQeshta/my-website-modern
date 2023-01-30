@@ -7,7 +7,7 @@ import { ApiSocialsInterface } from '@/interfaces';
 
 const Header: FC<ApiSocialsInterface> = ({ socials }) => {
   return (
-    <header className="sticky top-0 p-5 flex items-center justify-between max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="sticky top-0 p-5 flex  flex-col md:flex-row  items-center justify-between max-w-7xl mx-auto z-20 md:items-center">
       <motion.div
         initial={{
           opacity: 0,

@@ -14,7 +14,9 @@ const Skill: FC<SkillProps> = ({ skill }) => {
       transition={{
         duration: 1,
       }}
-      whileInView={{ x: 0, opacity: 1 }}
+      animate={{
+        x: 0,
+      }}
       className="group relative flex cursor-pointer rounded-full border  border-gray-500 bg-[#F7AB0A]/10 ">
       <Image
         src={image?.url}

@@ -21,8 +21,8 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
       <div className="relative rounded-full h-32 w-32 mx-auto object-cover">
         <Image
           src={heroImage?.url}
-          fill
-          sizes="(max-width: 768px) 100vw, 128px"
+          width={128}
+          height={128}
           className="relative rounded-full h-32 w-32 mx-auto object-cover"
           alt={tittle}
           priority
