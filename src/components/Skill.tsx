@@ -20,7 +20,7 @@ const Skill: FC<SkillProps> = ({ skill }) => {
       className="group relative flex cursor-pointer rounded-full border  border-gray-500 bg-[#F7AB0A]/10 ">
       <Image
         src={image?.url}
-        className=" w-24 h-24 object-cover xl:w-32 xl:h-32 filter group-hover:grayscale transition  duration-300 ease-in-out p-5"
+        className="w-24 h-24 object-cover xl:w-32 xl:h-32 filter group-hover:grayscale transition  duration-300 ease-in-out p-5"
         width={150}
         height={150}
         alt={title}
