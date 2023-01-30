@@ -16,7 +16,7 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden relative">
+    <div className="h-screen flex flex-col space-y-5 md:space-y-8 items-center justify-center text-center overflow-hidden relative">
       <BackgroundCircle />
       <div className="relative rounded-full h-32 w-32 mx-auto object-cover">
         <Image
@@ -29,12 +29,14 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
         />
       </div>
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">{role}</h2>
-        <h1 className="text-5xl lg:text-6xl font-semibold px-10">
+        <h2 className="text-xs md:text-sm uppercase text-gray-500 pb-2 tracking-[5px] md:tracking-[15px]">
+          {role}
+        </h2>
+        <h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
-        <div className="mt-10">
+        <div className="mt-10 mb-40 md:mb-0 md:mt-10">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
@@ -49,11 +51,12 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
           </Link>
         </div>
       </div>
+
       <a
         href={resume?.url}
         target="_blank"
         rel="noreferrer"
-        className="text-xl font-semibold text-[#F7AB0A]/50 cursor-pointer border border-[#F7AB0A]/50 py-2 px-5 flex justify-center items-center rounded-full hover:bg-[#F7AB0A]/50 hover:text-white transform ease-in-out duration-300">
+        className="z-20 text-sm md:text-xl font-semibold text-[#F7AB0A]/50 cursor-pointer border border-[#F7AB0A]/50 py-2 px-5 flex justify-center items-center rounded-full hover:bg-[#F7AB0A]/50 hover:text-white transform ease-in-out duration-300">
         Download Resume
       </a>
     </div>
