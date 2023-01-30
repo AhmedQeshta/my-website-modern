@@ -11,31 +11,31 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
       <TitleHeader title="Projects" />
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden  z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 snap-x  snap-mandatory">
-        {projects?.map(
-          ({ id, title, image, summary, technologies, linkToBuild }, index: number) => (
+        {projects
+          ?.sort((a, b) => a.order - b.order)
+          ?.map(({ id, title, image, summary, technologies, linkToBuild }, index: number) => (
             <motion.div
               initial={{
                 opacity: 0,
-                y: -300,
               }}
               transition={{
                 duration: 1.2,
               }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1 }}
               key={id}
               className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 h-screen">
               <Image
                 src={image?.url}
-                width={380}
-                height={380}
+                width={250}
+                height={250}
                 alt="user"
                 priority
-                className="w-64 h-64 mt-10 md:w-auto md:h-auto"
+                className="w-64 h-64 mt-10 md:w-[250px] md:h-[250px]"
               />
               <div className="space-y-10 px-0 md:px-10 max-w-6xl">
                 <h4 className="text-xl md:text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50 px-2">
-                    Case Study {index} of {projects?.length}:
+                    Case Study {index + 1} of {projects?.length}:
                   </span>
                   {title}
                 </h4>
@@ -51,7 +51,7 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                 <div
                   className="text-lg md:text-xl text-justify text-gray-200"
                   dangerouslySetInnerHTML={{
-                    __html: summary?.html,
+                    __html: summary?.html.slice(0, 500),
                   }}
                 />
                 <div className="flex justify-center md:justify-start space-x-5">
@@ -78,8 +78,7 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                 </div>
               </div>
             </motion.div>
-          ),
-        )}
+          ))}
       </div>
 
       <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12" />

@@ -76,6 +76,7 @@ export interface ProjectsInterface {
   summary: DescriptionType;
   technologies: TechnologiesType[];
   linkToBuild: string;
+  order: number;
 }
 
 export interface ApiProjectsInterface {
