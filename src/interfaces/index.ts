@@ -3,6 +3,7 @@ export type {
   SkillProps,
   ExperiencesInterfaceProps,
   ContactInputs,
+  svgMotionProps,
 } from './components';
 export type {
   PageinfosInterface,

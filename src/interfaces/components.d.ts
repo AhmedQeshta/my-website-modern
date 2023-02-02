@@ -18,3 +18,8 @@ export interface ContactInputs {
   subject: string;
   message: string;
 }
+
+export interface svgMotionProps {
+  animate: { pathLength: number };
+  transition: { duration: number };
+}

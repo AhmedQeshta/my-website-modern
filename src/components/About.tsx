@@ -4,6 +4,7 @@ import { TitleHeader } from '@/components';
 import { withGuard } from '@/utils';
 import { ApiPageInfosInterFace } from '@/interfaces';
 import Image from 'next/image';
+import { SvgAnimated } from '@/components';
 
 const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   const { backgroundInfo, description, resume, tittle } = pageinfos[0] ?? {};
@@ -29,13 +30,13 @@ const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
         }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
-        className="flex-shrink-0 rounded-full object-cover md:rounded-lg w-32 h-32 md:w-80 md:h-80 xl:w-[400px] xl:h-[400px]">
+        className="flex-shrink-0 rounded-full object-cover md:rounded-lg w-32 h-32 md:w-80 md:h-80 xl:w-[400px] xl:h-[500px]">
         <div className="relative w-full h-full mt-16 md:mt-0">
           <Image
             src={backgroundInfo?.url}
             fill
             sizes="(max-width: 640px) 100vw, 640px"
-            className="relative rounded-full object-cover md:rounded-lg w-32 h-32 md:w-80 md:h-80 xl:w-[400px] xl:h-[400px]"
+            className="relative rounded-full object-cover md:rounded-lg w-32 h-32 md:w-80 md:h-80 xl:w-[400px] xl:h-[500px]"
             alt={tittle}
             priority
           />
@@ -61,6 +62,9 @@ const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
             __html: description?.html,
           }}
         />
+        <div className="p-0 flex justify-center">
+          <SvgAnimated />
+        </div>
         <a
           href={resume?.url}
           target="_blank"
