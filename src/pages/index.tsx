@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ArrowSmallUpIcon } from '@heroicons/react/24/solid';
 import { GetStaticProps } from 'next';
-import { fetchData } from '@/utils';
+import { fetchData, withHead } from '@/utils';
 import { HomePropsInterface } from '@/interfaces';
 import dynamic from 'next/dynamic';
 
@@ -14,20 +14,17 @@ const Skills = dynamic(() => import('@/components/Skills'));
 const Projects = dynamic(() => import('@/components/Projects'));
 const ContactMe = dynamic(() => import('@/components/ContactMe'));
 
-export default function Home({
-  pageinfos,
-  skills,
-  socials,
-  experiences,
-  projects,
-}: HomePropsInterface) {
+const Home = ({ pageinfos, skills, socials, experiences, projects }: HomePropsInterface) => {
   return (
     <div className="bg-[#242424] text-white h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-      <Head>
+      {/* <Head>
         <title>Ahmed Qeshta</title>
-        <meta name="description" content="Ahmed Qeshta" />
+        <meta
+          name="description"
+          content={`I am Ahmed Qeshta, a graduate of Computer Engineering from the Islamic University of Gaza with a BA and also graduated from the Career Acceleration Program at Code Academy. I worked as a freelance FrontEnd developer creating user friendly web pages and using front end frameworks with code best practices and clean code. I worked as a ReactJs developer at Google for startups. And I built e-commerce sites, these sites helped me acquire new skills, face new problems and solve them, and in my free time I do some problems and solve them to increase my skills.`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      </Head> */}
 
       <Header socials={socials} />
 
@@ -64,7 +61,9 @@ export default function Home({
       </Link>
     </div>
   );
-}
+};
+
+export default withHead(Home);
 
 export const getStaticProps: GetStaticProps = async () => {
   const { pageinfos } = await fetchData('getPageinfo').catch((err) => {

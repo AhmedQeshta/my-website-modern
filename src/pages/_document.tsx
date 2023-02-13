@@ -1,10 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
 import * as gtag from '@/lib/gtag';
-import { useGTag } from '@/hooks';
 
 export default function Document() {
-  useGTag();
   return (
     <Html lang="en">
       <Head>

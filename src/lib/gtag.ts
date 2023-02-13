@@ -5,7 +5,7 @@ export const GOOGLE_ADD_LINK = process.env.NEXT_PUBLIC_GOOGLE_ADD_LINK;
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageView = (url: string) => {
-  window.gtag('config', GA_TRACKING_ID, {
+  window.gtag('config', GA_TRACKING_ID!, {
     page_path: url,
   });
 };
