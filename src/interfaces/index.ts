@@ -14,3 +14,4 @@ export type {
   ApiProjectsInterface,
 } from './api';
 export type { HomePropsInterface } from './pages';
+export type { EventProps } from './gtag';
