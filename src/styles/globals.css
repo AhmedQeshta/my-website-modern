@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .heroButton {
+    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs md:text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40;
+  }
+  .contactInput {
+    @apply w-full text-sm md:text-lg outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -19,15 +28,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 1.5;
-}
-
-@layer components {
-  .heroButton {
-    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs md:text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40;
-  }
-  .contactInput {
-    @apply w-full text-sm md:text-lg outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40;
-  }
 }
 
 /* custom scroll bar  */
