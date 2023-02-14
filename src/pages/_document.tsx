@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
 import * as gtag from '@/lib/gtag';
 
-export default function Document() {
+function Document() {
   return (
     <Html lang="en">
       <Head>
@@ -20,6 +20,7 @@ export default function Document() {
           }}
         />
       </Head>
+
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
         strategy="afterInteractive"
@@ -32,3 +33,5 @@ export default function Document() {
     </Html>
   );
 }
+
+export default Document;

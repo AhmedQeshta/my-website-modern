@@ -35,5 +35,7 @@ export default async function handler(
     `,
   );
 
+  // cashing
+  res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
   res.status(200).json(data);
 }

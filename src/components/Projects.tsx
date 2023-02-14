@@ -30,7 +30,7 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                 height={250}
                 alt="user"
                 priority
-                className="w-64 h-64 mt-10 md:w-[250px] md:h-[250px]"
+                className="w-64 h-64 mt-10"
               />
               <div className="space-y-10 px-0 md:px-10 max-w-6xl">
                 <h4 className="text-xl md:text-4xl font-semibold text-center">

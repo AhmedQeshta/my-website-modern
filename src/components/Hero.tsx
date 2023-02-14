@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { withGuard } from '@/utils';
 import { ApiPageInfosInterFace } from '@/interfaces';
+import DEFAULT_IMAGE from '@/assets/images/default_Image.png';
 
 const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   const { heroImage, points, role, tittle, resume } = pageinfos[0] ?? {};
@@ -14,6 +15,10 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
     loop: true,
     delaySpeed: 2000,
   });
+
+  const myLoader: any = () => {
+    return DEFAULT_IMAGE;
+  };
 
   return (
     <div className="h-screen flex flex-col space-y-5 md:space-y-8 items-center justify-center text-center overflow-hidden relative">
@@ -26,6 +31,8 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
           className="relative rounded-full h-32 w-32 mx-auto object-cover"
           alt={tittle}
           priority
+          placeholder="blur"
+          blurDataURL={heroImage?.url}
         />
       </div>
       <div className="z-20">
