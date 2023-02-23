@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { Skill, TitleHeader } from '@/components';
 import { withGuard } from '@/utils';
 import { ApiSkillsInterFace } from '@/interfaces';
+
+const TitleHeader = dynamic(() => import('@/components/ui/TitleHeader'));
+const Skill = dynamic(() => import('@/components/Skill'));
 
 const Skills: FC<ApiSkillsInterFace> = ({ skills }) => {
   return (

@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
-import { TitleHeader } from '@/components';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { withGuard } from '@/utils';
 import { ApiProjectsInterface } from '@/interfaces';
+
+const TitleHeader = dynamic(() => import('@/components/ui/TitleHeader'));
 
 const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
   return (
@@ -29,7 +31,7 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                 width={250}
                 height={250}
                 alt="user"
-                priority
+                loading="lazy"
                 className="w-64 h-64 mt-10"
               />
               <div className="space-y-10 px-0 md:px-10 max-w-6xl">
@@ -44,7 +46,7 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                     <div
                       key={id}
                       className="flex flex-col items-center space-y-2 bg-[#999999]/50 p-3 rounded-full w-[30px] h-[30px] md:w-[50px] md:h-[50px]">
-                      <Image src={image?.url} width={35} height={35} alt="user" priority={false} />
+                      <Image src={image?.url} width={35} height={35} alt="user" loading="lazy" />
                     </div>
                   ))}
                 </div>

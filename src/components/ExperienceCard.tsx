@@ -26,7 +26,7 @@ const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
           height={150}
           className="rounded-full h-32 w-32 object-cover object-center"
           alt={company}
-          priority
+          loading="lazy"
         />
       </motion.div>
 
@@ -51,6 +51,7 @@ const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
               width={100}
               height={100}
               alt={title}
+              loading="lazy"
             />
           ))}
         </motion.div>

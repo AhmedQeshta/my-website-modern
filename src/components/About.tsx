@@ -1,10 +1,14 @@
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
-import { TitleHeader } from '@/components';
+
 import { withGuard } from '@/utils';
 import { ApiPageInfosInterFace } from '@/interfaces';
 import Image from 'next/image';
-import { SvgAnimated } from '@/components';
+
+import dynamic from 'next/dynamic';
+
+const TitleHeader = dynamic(() => import('@/components/ui/TitleHeader'));
+const SvgAnimated = dynamic(() => import('@/components/ui/SvgAnimated'));
 
 const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   const { backgroundInfo, description, resume, tittle } = pageinfos[0] ?? {};
@@ -38,7 +42,7 @@ const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
             sizes="(max-width: 640px) 100vw, 640px"
             className="relative rounded-full object-cover md:rounded-lg w-32 h-32 md:w-80 md:h-80 xl:w-[400px] xl:h-[500px]"
             alt={tittle}
-            priority
+            loading="lazy"
           />
         </div>
       </motion.div>

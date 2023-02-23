@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
+import dynamic from 'next/dynamic';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import { BackgroundCircle } from '@/components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { withGuard } from '@/utils';
 import { ApiPageInfosInterFace } from '@/interfaces';
-import DEFAULT_IMAGE from '@/assets/images/default_Image.png';
+
+const BackgroundCircle = dynamic(() => import('@/components/BackgroundCircle'));
 
 const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   const { heroImage, points, role, tittle, resume } = pageinfos[0] ?? {};
@@ -15,10 +16,6 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
     loop: true,
     delaySpeed: 2000,
   });
-
-  const myLoader: any = () => {
-    return DEFAULT_IMAGE;
-  };
 
   return (
     <div className="h-screen flex flex-col space-y-5 md:space-y-8 items-center justify-center text-center overflow-hidden relative">
@@ -30,9 +27,9 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
           height={128}
           className="relative rounded-full h-32 w-32 mx-auto object-cover"
           alt={tittle}
-          priority
           placeholder="blur"
           blurDataURL={heroImage?.url}
+          loading="lazy"
         />
       </div>
       <div className="z-20">
@@ -59,13 +56,13 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
         </div>
       </div>
 
-      <a
+      <Link
         href={resume?.url}
         target="_blank"
         rel="noreferrer"
         className="z-20 text-sm md:text-xl font-semibold text-[#F7AB0A]/50 cursor-pointer border border-[#F7AB0A]/50 py-2 px-5 flex justify-center items-center rounded-full hover:bg-[#F7AB0A]/50 hover:text-white transform ease-in-out duration-300">
         Download Resume
-      </a>
+      </Link>
     </div>
   );
 };

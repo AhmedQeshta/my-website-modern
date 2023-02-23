@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { ExperienceCard, TitleHeader } from '@/components';
 import { withGuard } from '@/utils';
 import { ApiExperiencesInterface } from '@/interfaces';
+
+const ExperienceCard = dynamic(() => import('@/components/ExperienceCard'));
+const TitleHeader = dynamic(() => import('@/components/ui/TitleHeader'));
 
 const WorkExperience: FC<ApiExperiencesInterface> = ({ experiences }) => {
   return (

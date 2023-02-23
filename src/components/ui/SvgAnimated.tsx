@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { svgAnimation } from '@/utils';
 
-export const SvgAnimated = () => {
+const SvgAnimated = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
@@ -67,3 +67,5 @@ export const SvgAnimated = () => {
     </motion.svg>
   );
 };
+
+export default SvgAnimated;
