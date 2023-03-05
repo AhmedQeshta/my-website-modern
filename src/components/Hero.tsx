@@ -1,12 +1,9 @@
 import React, { FC } from 'react';
-import dynamic from 'next/dynamic';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import Image from 'next/image';
 import Link from 'next/link';
-import { withGuard } from '@/utils';
+import { withGuard, BackgroundCircle } from '@/utils';
 import { ApiPageInfosInterFace } from '@/interfaces';
-
-const BackgroundCircle = dynamic(() => import('@/components/BackgroundCircle'));
 
 const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   const { heroImage, points, role, tittle, resume } = pageinfos[0] ?? {};

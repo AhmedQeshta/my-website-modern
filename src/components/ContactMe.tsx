@@ -1,11 +1,8 @@
 import { useCallback, FC } from 'react';
-import dynamic from 'next/dynamic';
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { ApiPageInfosInterFace, ContactInputs } from '@/interfaces';
-import { withGuard } from '@/utils';
-
-const TitleHeader = dynamic(() => import('@/components/ui/TitleHeader'));
+import { withGuard, TitleHeader } from '@/utils';
 
 const ContactMe: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   const { address, email, phoneNumber } = pageinfos[0] ?? {};

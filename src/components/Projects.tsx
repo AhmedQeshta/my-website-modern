@@ -2,10 +2,8 @@ import React, { FC } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { withGuard } from '@/utils';
+import { withGuard, TitleHeader } from '@/utils';
 import { ApiProjectsInterface } from '@/interfaces';
-
-const TitleHeader = dynamic(() => import('@/components/ui/TitleHeader'));
 
 const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
   return (
