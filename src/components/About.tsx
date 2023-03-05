@@ -1,14 +1,9 @@
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
-
-import { withGuard } from '@/utils';
-import { ApiPageInfosInterFace } from '@/interfaces';
 import Image from 'next/image';
+import { withGuard, TitleHeader, SvgAnimated } from '@/utils';
+import { ApiPageInfosInterFace } from '@/interfaces';
 
-import dynamic from 'next/dynamic';
-
-const TitleHeader = dynamic(() => import('@/components/ui/TitleHeader'));
-const SvgAnimated = dynamic(() => import('@/components/ui/SvgAnimated'));
 
 const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   const { backgroundInfo, description, resume, tittle } = pageinfos[0] ?? {};
