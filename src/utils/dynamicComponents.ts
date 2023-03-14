@@ -14,3 +14,4 @@ export const ExperienceCard = dynamic(() => import('@/components/ExperienceCard'
 export const TitleHeader = dynamic(() => import('@/components/ui/TitleHeader'));
 export const SvgAnimated = dynamic(() => import('@/components/ui/SvgAnimated'));
 export const BackgroundCircle = dynamic(() => import('@/components/ui/BackgroundCircle'));
+export const Modal = dynamic(() => import('@/components/ui/Modal'));

@@ -51,6 +51,7 @@ const Home = ({ pageinfos, skills, socials, experiences, projects }: HomePropsIn
           property="og:image"
           content="https://ahmedqeshta.vercel.app/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FlLoNQytIQfa4uCKVhFrb&w=828&q=75"
         />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
 
       <Header socials={socials} />

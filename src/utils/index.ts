@@ -1,18 +1,6 @@
-export { graphQLClient } from './graphQL';
-export { fetchData } from './fetchData';
-export { withGuard } from './withGuard';
-export { svgAnimation } from './svg';
-export {
-  Header,
-  Hero,
-  About,
-  WorkExperience,
-  Skills,
-  Projects,
-  ContactMe,
-  TitleHeader,
-  SvgAnimated,
-  BackgroundCircle,
-  Skill,
-  ExperienceCard,
-} from './dynamicComponents';
+export * from './graphQL';
+export * from './fetchData';
+export * from './withGuard';
+export * from './svg';
+export * from './dynamicComponents';
+export * from './pwa';

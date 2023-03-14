@@ -23,3 +23,8 @@ export interface svgMotionProps {
   animate: { pathLength: number };
   transition: { duration: number };
 }
+
+export interface ModalProps {
+  children: React.ReactNode;
+  title: string;
+}

@@ -6,9 +6,9 @@ function Document() {
   return (
     <Html lang="en">
       <Head>
-        <script async src={gtag.GOOGLE_ADD_LINK} crossOrigin="anonymous"></script>
+        <script defer src={gtag.GOOGLE_ADD_LINK} crossOrigin="anonymous"></script>
         <script
-          async
+          defer
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380405094521784"
           crossOrigin="anonymous"></script>
         <script

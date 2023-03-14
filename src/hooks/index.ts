@@ -1,1 +1,1 @@
-export { default as useGTag } from './useGTag';
+export * from './useGTag';
