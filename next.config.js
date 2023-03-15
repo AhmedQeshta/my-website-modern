@@ -13,7 +13,7 @@ const runtimeCaching = require('next-pwa/cache');
 //   },
 // });
 
-const config = withPWA({
+const config = {
   // here goes your Next.js configuration
   reactStrictMode: false,
   images: {
@@ -26,7 +26,7 @@ const config = withPWA({
     disable: process.env.NODE_ENV === 'development',
     runtimeCaching,
   },
-});
+};
 
 const nextConfig = withPWA({
   dest: 'public',
