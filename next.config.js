@@ -2,19 +2,6 @@
 const withPWA = require('next-pwa');
 const runtimeCaching = require('next-pwa/cache');
 
-// import withPWA from 'next-pwa';
-// import runtimeCaching from 'next-pwa/cache.js';
-
-const isProduction = process.env.NODE_ENV === 'production';
-
-const config = {
-  // here goes your Next.js configuration
-  reactStrictMode: false,
-  images: {
-    domains: ['avatars.githubusercontent.com', 'media.graphassets.com'],
-  },
-};
-
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //   enabled: process.env.ANALYZE === 'true',
 // });
@@ -26,10 +13,27 @@ const config = {
 //   },
 // });
 
+const config = withPWA({
+  // here goes your Next.js configuration
+  reactStrictMode: false,
+  images: {
+    domains: ['avatars.githubusercontent.com', 'media.graphassets.com'],
+  },
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development',
+    runtimeCaching,
+  },
+});
+
 const nextConfig = withPWA({
   dest: 'public',
-  disable: !isProduction,
+  disable: process.env.NODE_ENV === 'development',
   runtimeCaching,
+  register: true,
+  skipWaiting: true,
 })(config);
 
 module.exports = nextConfig;

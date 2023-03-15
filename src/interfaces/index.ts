@@ -1,4 +1,4 @@
-export type * from './components';
-export type * from './api';
-export type * from './pages';
-export type * from './gtag';
+export * from './components';
+export * from './api';
+export * from './pages';
+export * from './gtag';
