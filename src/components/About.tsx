@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { withGuard, TitleHeader, SvgAnimated } from '@/utils';
 import { ApiPageInfosInterFace } from '@/interfaces';
 
-
 const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
   const { backgroundInfo, description, resume, tittle } = pageinfos[0] ?? {};
 
@@ -35,7 +34,7 @@ const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
             src={backgroundInfo?.url}
             fill
             sizes="(max-width: 640px) 100vw, 640px"
-            className="relative rounded-full object-cover md:rounded-lg w-32 h-32 md:w-80 md:h-80 xl:w-[400px] xl:h-[500px]"
+            className="aboutImage"
             alt={tittle}
             loading="lazy"
           />

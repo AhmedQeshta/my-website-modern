@@ -22,7 +22,7 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
           src={heroImage?.url}
           width={128}
           height={128}
-          className="relative rounded-full h-32 w-32 mx-auto object-cover"
+          className="heroImage"
           alt={tittle}
           placeholder="blur"
           blurDataURL={heroImage?.url}

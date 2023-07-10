@@ -34,7 +34,7 @@ const Header: FC<ApiSocialsInterface> = ({ socials }) => {
           />
         ))}
       </motion.div>
-      <Link href="#contact-me">
+      <Link rel="noreferrer" href="#contact-me">
         <motion.div
           initial={{
             opacity: 0,

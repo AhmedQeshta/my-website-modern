@@ -5,12 +5,11 @@ function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Ahmed Qeshta</title>
         <meta
           name="description"
           content="I am Ahmed Qeshta, a graduate of Computer Engineering from the Islamic University of Gaza with a BA and also graduated from the Career Acceleration Program at Code Academy. I worked as a freelance FrontEnd developer creating user friendly web pages and using front end frameworks with code best practices and clean code. I worked as a ReactJs developer at Google for startups. And I built e-commerce sites, these sites helped me acquire new skills, face new problems and solve them, and in my free time I do some problems and solve them to increase my skills."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         {/* meta for social media */}
         <meta property="og:title" content="Ahmed Qeshta" />
         <meta
