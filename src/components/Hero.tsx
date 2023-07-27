@@ -38,16 +38,16 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
           <Cursor cursorColor="#F7AB0A" />
         </h1>
         <div className="mt-10 mb-40 md:mb-0 md:mt-10">
-          <Link href="#about">
+          <Link rel="nofollow" aria-label='link about' title='link about' href="#about">
             <button className="heroButton">About</button>
           </Link>
-          <Link href="#experience">
+          <Link rel="nofollow" aria-label='link experience' title='link experience' href="#experience">
             <button className="heroButton">Experience</button>
           </Link>
-          <Link href="#skills">
+          <Link rel="nofollow" aria-label='link skills' title='link skills' href="#skills">
             <button className="heroButton">Skills</button>
           </Link>
-          <Link href="#projects">
+          <Link rel="nofollow" aria-label='link projects' title='link projects' href="#projects">
             <button className="heroButton">Projects</button>
           </Link>
         </div>
@@ -56,7 +56,8 @@ const Hero: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
       <Link
         href={resume?.url}
         target="_blank"
-        rel="noreferrer"
+        rel="nofollow" aria-label='link Download Resume' 
+        title='Download Resume'
         className="z-20 text-sm md:text-xl font-semibold text-[#F7AB0A]/50 cursor-pointer border border-[#F7AB0A]/50 py-2 px-5 flex justify-center items-center rounded-full hover:bg-[#F7AB0A]/50 hover:text-white transform ease-in-out duration-300">
         Download Resume
       </Link>

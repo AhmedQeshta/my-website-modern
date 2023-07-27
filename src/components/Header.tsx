@@ -34,7 +34,7 @@ const Header: FC<ApiSocialsInterface> = ({ socials }) => {
           />
         ))}
       </motion.div>
-      <Link rel="noreferrer" href="#contact-me">
+      <Link rel="nofollow" aria-label='link contact me' title='link contact me' href="#contact-me">
         <motion.div
           initial={{
             opacity: 0,
