@@ -33,12 +33,12 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                 className="w-64 h-64 mt-10"
               />
               <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-                <h4 className="text-xl md:text-4xl font-semibold text-center">
+                <h3 className="text-xl md:text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50 px-2">
                     Case Study {index + 1} of {projects?.length}:
                   </span>
                   {title}
-                </h4>
+                </h3>
                 <div className="flex flex-wrap justify-center md:justify-start space-x-5">
                   {technologies?.map(({ id, image }) => (
                     <div
@@ -58,7 +58,9 @@ const Projects: FC<ApiProjectsInterface> = ({ projects }) => {
                   <a
                     href={linkToBuild}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="nofollow noreferrer" 
+                    aria-label='link View Project' 
+                    title='View Project'
                     className="flex items-center space-x-2 text-xl font-semibold text-[#F7AB0A]/100 hover:text-[#F7AB0A]/100">
                     <span>View Project</span>
                     <svg

@@ -31,7 +31,7 @@ const ExperienceCard: FC<ExperiencesInterfaceProps> = ({ experience }) => {
       </motion.div>
 
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">{jobTitle}</h4>
+        <h3 className="text-4xl font-light">{jobTitle}</h3>
         <p className="font-bold text-2xl mt-1">{company}</p>
         <motion.div
           initial={{

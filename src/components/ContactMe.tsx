@@ -23,10 +23,10 @@ const ContactMe: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
     <div className="flex relative flex-col text-center md:text-left xl:flex-row  max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center z-0">
       <TitleHeader title="Contact Me" />
       <div className="flex flex-col space-y-10">
-        <h4 className="text-2xl md:text-4xl font-semibold text-center">
+        <h3 className="text-2xl md:text-4xl font-semibold text-center">
           I have got just what you need.
           <span className="underline decoration-[#F7AB0A]/50 px-2">lets Talk</span>
-        </h4>
+        </h3>
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#F7AB0A] h-5 w-5 md:h-7 md:w-7 animate-pulse" />

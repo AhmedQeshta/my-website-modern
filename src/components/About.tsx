@@ -51,9 +51,9 @@ const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className="space-y-10 px-0 md:px-10">
-        <h4 className="text-2xl md:text-4xl font-semibold">
+        <h3 className="text-2xl md:text-4xl font-semibold">
           Here is a <span className="underline decoration-[#F7AB0A]/40">little</span> background
-        </h4>
+        </h3>
         <div
           className="text-lg md:text-xl text-justify text-gray-200"
           dangerouslySetInnerHTML={{
@@ -63,10 +63,13 @@ const About: FC<ApiPageInfosInterFace> = ({ pageinfos }) => {
         <div className="p-0 flex justify-center">
           <SvgAnimated />
         </div>
+       
         <a
           href={resume?.url}
           target="_blank"
-          rel="noreferrer"
+          rel="nofollow noreferrer"
+          aria-label='link hero' 
+          title=' Download Resume'
           className="text-lg md:text-2xl font-semibold text-[#F7AB0A] cursor-pointer mt-5 border border-[#F7AB0A]/50 p-3 flex justify-center items-center rounded-full hover:bg-[#F7AB0A]/50 hover:text-white transform ease-in-out duration-300">
           Download Resume
         </a>
